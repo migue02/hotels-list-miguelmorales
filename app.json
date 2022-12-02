@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "miguelmorales-lastminute-test",
-    "slug": "miguelmorales-lastminute-test",
+    "name": "hotels-list-miguelmorales",
+    "slug": "hotels-list-miguelmorales",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
