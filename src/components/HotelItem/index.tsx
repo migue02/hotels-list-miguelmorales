@@ -5,6 +5,9 @@ import GenericList from '../GenericList';
 import HotelImage from '../HotelImage';
 import { Text, View } from '../Themed';
 import styles from './styles';
+import Stars from '../Stars';
+import Rating from '../Rating';
+import Location from '../Location';
 
 interface IHotel {
     item: Hotel;
@@ -14,11 +17,7 @@ interface IHotel {
 const HotelItem: FC<IHotel> = ({ item, onPress }) => {
     return (
         <Pressable onPress={() => onPress(item)}>
-            <View
-                style={styles.container}
-                lightColor="#a2c2f5"
-                darkColor="#1f63d1"
-            >
+            <View style={styles.container}>
                 <View style={styles.carousel}>
                     <GenericList
                         keyExtractor={(item: string) => item}
@@ -30,7 +29,20 @@ const HotelItem: FC<IHotel> = ({ item, onPress }) => {
                     />
                 </View>
                 <View style={styles.metadataContainer}>
-                    <Text>{item.name}</Text>
+                    <Text style={styles.name} numberOfLines={1}>
+                        {item.name}
+                    </Text>
+                    <View style={styles.middleContainer}>
+                        <Stars stars={item.stars} />
+                        <Rating rating={item.userRating} />
+                    </View>
+                    <View style={styles.bottomContainer}>
+                        <Location location={item.location} />
+                        <Text style={styles.price}>
+                            {item.price}
+                            {item.currency}
+                        </Text>
+                    </View>
                 </View>
             </View>
         </Pressable>

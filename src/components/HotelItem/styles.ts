@@ -15,9 +15,25 @@ const styles = StyleSheet.create({
     },
     metadataContainer: {
         flex: 1,
+        marginTop: 16,
         marginHorizontal: 16,
         backgroundColor: 'transparent',
-        justifyContent: 'space-around',
+    },
+    middleContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 5,
+    },
+    bottomContainer: {
+        marginVertical: 5,
+    },
+    name: {
+        fontSize: 16,
+    },
+    price: {
+        flex: 1,
+        textAlign: 'right',
+        fontSize: 14,
     },
 });
 

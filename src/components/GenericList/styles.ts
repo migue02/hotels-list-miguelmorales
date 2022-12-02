@@ -4,18 +4,14 @@ const styles = StyleSheet.create({
     itemContainer: {
         flexDirection: 'column',
     },
-    leftArrow: {
+    arrow: {
         position: 'absolute',
         height: '100%',
         width: 32,
         backgroundColor: 'transparent',
     },
-    rightArrow: {
-        position: 'absolute',
-        height: '100%',
-        width: 32,
+    right: {
         right: 0,
-        backgroundColor: 'transparent',
     },
     outerIcon: {
         flex: 1,
@@ -27,6 +23,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 24,
         height: 48,
+        margin: 2,
         backgroundColor: '#00000044',
     },
 });
