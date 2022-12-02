@@ -6,8 +6,9 @@ const useHotels = function (): {
     hotels: Hotel[];
     loading: boolean;
     search: (text: string) => void;
+    order: (field: keyof Hotel | '') => void;
 } {
-    const [hotels, setHotels] = useState<Hotel[]>([]);
+    const [initalHotels, setInitalHotels] = useState<Hotel[]>([]);
     const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -16,8 +17,8 @@ const useHotels = function (): {
             setLoading(true);
             const hotels = await getHotels();
 
-            setHotels(hotels);
-            setFilteredHotels(hotels);
+            setInitalHotels(hotels);
+            setFilteredHotels([...hotels]);
             setLoading(false);
         };
         void fetchHotels();
@@ -25,13 +26,29 @@ const useHotels = function (): {
 
     const search = (text: string) => {
         if (text) {
-            const filteredHotels = hotels.filter((hotel) => {
-                return hotel.name.toLowerCase().includes(text.toLowerCase());
-            });
-
-            setFilteredHotels(filteredHotels);
+            setFilteredHotels(
+                initalHotels.filter((hotel) =>
+                    hotel.name.toLowerCase().includes(text.toLowerCase())
+                )
+            );
         } else {
-            setFilteredHotels(hotels);
+            setFilteredHotels([...initalHotels]);
+        }
+    };
+
+    const order = (field: keyof Hotel | '') => {
+        if (field && field.length > 0) {
+            setFilteredHotels((prev) => [
+                ...prev.sort((h1, h2) => {
+                    if (typeof h1[field] === 'string') {
+                        return h1[field] > h2[field] ? 1 : -1;
+                    } else {
+                        return h1[field] < h2[field] ? 1 : -1;
+                    }
+                }),
+            ]);
+        } else {
+            setFilteredHotels([...initalHotels]);
         }
     };
 
@@ -39,6 +56,7 @@ const useHotels = function (): {
         hotels: filteredHotels,
         loading,
         search,
+        order,
     };
 };
 

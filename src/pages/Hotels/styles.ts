@@ -1,10 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    title: {
-        textAlign: 'center',
-        fontSize: 32,
-        margin: 10,
+    header: {
+        zIndex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignContent: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingHorizontal: 16,
+    },
+    picker: {
+        width: '50%',
+        marginLeft: 16,
     },
 });
 
