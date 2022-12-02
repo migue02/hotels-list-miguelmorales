@@ -8,6 +8,7 @@ const useHotels = function (): {
     search: (text: string) => void;
 } {
     const [hotels, setHotels] = useState<Hotel[]>([]);
+    const [filteredHotels, setFilteredHotels] = useState<Hotel[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -16,20 +17,29 @@ const useHotels = function (): {
             const hotels = await getHotels();
 
             setHotels(hotels);
+            setFilteredHotels(hotels);
             setLoading(false);
         };
         void fetchHotels();
     }, []);
 
     const search = (text: string) => {
-        const filteredHotels = hotels.filter((hotel) =>
-            hotel.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
-        );
+        if (text) {
+            const filteredHotels = hotels.filter((hotel) => {
+                return hotel.name.toLowerCase().includes(text.toLowerCase());
+            });
 
-        setHotels(filteredHotels);
+            setFilteredHotels(filteredHotels);
+        } else {
+            setFilteredHotels(hotels);
+        }
     };
 
-    return { hotels, loading, search };
+    return {
+        hotels: filteredHotels,
+        loading,
+        search,
+    };
 };
 
 export default useHotels;

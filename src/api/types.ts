@@ -1,7 +1,7 @@
 export type CallType = 'missed' | 'answered' | 'voicemail';
 export type CallDirection = 'inbound' | 'outbound';
 
-type Location = {
+export type Location = {
     address: string;
     city: string;
     latitude: number;

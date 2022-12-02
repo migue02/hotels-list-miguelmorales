@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { FlatList, ListRenderItem, TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { View } from '../Themed';
 import styles from './styles';
 import { GenericListProps } from './types';
@@ -45,14 +45,14 @@ const GenericList = <ItemT,>(props: GenericListProps<ItemT>) => {
             {scrollButtons && items?.length ? (
                 <>
                     {currentIndex > 0 ? (
-                        <View style={styles.leftArrow}>
+                        <View style={styles.arrow}>
                             <View style={styles.outerIcon}>
                                 <TouchableOpacity
                                     style={styles.icon}
                                     onPress={() => changeIndex(false)}
                                 >
-                                    <AntDesign
-                                        name="leftcircleo"
+                                    <MaterialCommunityIcons
+                                        name="chevron-left"
                                         size={24}
                                         color="#DDD"
                                     />
@@ -61,14 +61,14 @@ const GenericList = <ItemT,>(props: GenericListProps<ItemT>) => {
                         </View>
                     ) : null}
                     {currentIndex + 1 < items.length ? (
-                        <View style={styles.rightArrow}>
+                        <View style={[styles.arrow, styles.right]}>
                             <View style={styles.outerIcon}>
                                 <TouchableOpacity
                                     style={styles.icon}
                                     onPress={() => changeIndex(true)}
                                 >
-                                    <AntDesign
-                                        name="rightcircleo"
+                                    <MaterialCommunityIcons
+                                        name="chevron-right"
                                         size={24}
                                         color="#DDD"
                                     />
