@@ -8,11 +8,10 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         marginHorizontal: 16,
     },
-    image: {
+    carousel: {
+        width: 120,
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
-        width: 84,
-        minHeight: 84,
     },
     metadataContainer: {
         flex: 1,
