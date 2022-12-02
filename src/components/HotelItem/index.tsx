@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Pressable } from 'react-native';
 import { Hotel } from '../../api/types';
+import GenericList from '../GenericList';
+import HotelImage from '../HotelImage';
 import { Text, View } from '../Themed';
 import styles from './styles';
 
@@ -11,21 +13,27 @@ interface IHotel {
 
 const HotelItem: FC<IHotel> = ({ item, onPress }) => {
     return (
-        <TouchableOpacity onPress={() => onPress(item)}>
+        <Pressable onPress={() => onPress(item)}>
             <View
                 style={styles.container}
                 lightColor="#a2c2f5"
                 darkColor="#1f63d1"
             >
-                <Image
-                    style={styles.image}
-                    source={{ uri: item.gallery?.[0] }}
-                />
+                <View style={styles.carousel}>
+                    <GenericList
+                        keyExtractor={(item: string) => item}
+                        horizontal
+                        items={item.gallery}
+                        renderDetails={HotelImage}
+                        onPressItem={(item: string) => console.log({ item })}
+                        scrollButtons
+                    />
+                </View>
                 <View style={styles.metadataContainer}>
                     <Text>{item.name}</Text>
                 </View>
             </View>
-        </TouchableOpacity>
+        </Pressable>
     );
 };
 
