@@ -33,7 +33,7 @@ const HotelItem: FC<IHotel> = ({ item, onPress }) => {
                         {item.name}
                     </Text>
                     <View style={styles.middleContainer}>
-                        <Stars totalStars={5} stars={item.stars} />
+                        <Stars stars={item.stars} />
                         <Rating rating={item.userRating} />
                     </View>
                     <View style={styles.bottomContainer}>

@@ -6,11 +6,11 @@ import styles from './styles';
 
 interface IProps {
     stars: number;
-    totalStars: number;
+    totalStars?: number;
 }
 
 const Stars: FC<IProps> = (props) => {
-    const { stars, totalStars } = props;
+    const { stars, totalStars = stars } = props;
 
     return (
         <View style={styles.container}>
