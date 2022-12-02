@@ -31,7 +31,9 @@ function RootNavigator() {
                 <Stack.Screen
                     name="Hotels"
                     component={Hotels}
-                    options={{ headerShown: false }}
+                    options={{
+                        headerLargeTitle: true,
+                    }}
                 />
             </Stack.Group>
         </Stack.Navigator>

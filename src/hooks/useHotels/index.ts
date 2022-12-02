@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import { getHotels } from '../../api';
 import { Hotel } from '../../api/types';
 
-const useHotels = function (): { hotels: Hotel[]; loading: boolean } {
+const useHotels = function (): {
+    hotels: Hotel[];
+    loading: boolean;
+    search: (text: string) => void;
+} {
     const [hotels, setHotels] = useState<Hotel[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -10,7 +14,6 @@ const useHotels = function (): { hotels: Hotel[]; loading: boolean } {
         const fetchHotels = async () => {
             setLoading(true);
             const hotels = await getHotels();
-            console.log({ hotels });
 
             setHotels(hotels);
             setLoading(false);
@@ -18,7 +21,15 @@ const useHotels = function (): { hotels: Hotel[]; loading: boolean } {
         void fetchHotels();
     }, []);
 
-    return { hotels, loading };
+    const search = (text: string) => {
+        const filteredHotels = hotels.filter((hotel) =>
+            hotel.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
+        );
+
+        setHotels(filteredHotels);
+    };
+
+    return { hotels, loading, search };
 };
 
 export default useHotels;
