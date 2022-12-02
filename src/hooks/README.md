@@ -1,6 +1,6 @@
 ## Hooks
 
-### [useHotels](https://github.com/migue02/miguel-morales-aircall-test/tree/main/src/hooks/useHotels)
+### [useHotels](https://github.com/migue02/hotels-list-miguelmorales/tree/main/src/hooks/useHotels)
 
 Hook to be able to get the list of hotels from the backend.
 It returns an object with the hotels and the loading state:
