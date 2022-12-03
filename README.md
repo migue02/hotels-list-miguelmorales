@@ -6,17 +6,20 @@
 -   react 18.1.0
 -   react-native 0.70.5
 -   node v16.17.1
--   npm 8.15.0
+-   yarn 1.22.19
 -   typescript 4.6.3
 
 ## How to start the app
 
--   **Install dependencies**: npm install
--   **Start the server**: npm run start
--   **Run ios**: npm run ios
--   **Run android**: npm run android
--   **Run formatter**: npm run format
--   **Run type checker**: npm run typecheck
+-   **Install dependencies**: yarn
+-   **Start the server**: yarn start
+-   **Run ios**: yarn ios
+-   **Run android**: yarn android
+-   **Run formatter**: yarn format
+-   **Run tests**: yarn test
+-   **Run linter**: yarn lint
+-   **Run fix linter**: yarn lint-fix
+-   **Run type checker**: yarn typecheck
 
 ## Introduction:
 
