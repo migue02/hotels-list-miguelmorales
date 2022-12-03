@@ -1,6 +1,7 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRef, useState } from 'react';
 import { FlatList, ListRenderItem, TouchableOpacity } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import { View } from '../Themed';
 import styles from './styles';
 import { GenericListProps } from './types';

@@ -1,4 +1,5 @@
 import { Text, TouchableOpacity, useColorScheme, View } from 'react-native';
+
 import Colors from '../../constants/Theme';
 
 type ThemeProps = {

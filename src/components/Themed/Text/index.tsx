@@ -1,4 +1,5 @@
 import { Text as DefaultText } from 'react-native';
+
 import { useThemeProp, TextProps } from '../utils';
 
 export function Text(props: TextProps) {

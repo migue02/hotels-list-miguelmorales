@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
+
 import { Hotel } from '../../api/types';
 
 type MyDropDownPickerProps = {

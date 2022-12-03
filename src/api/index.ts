@@ -41,10 +41,12 @@ const get = async <Response>(url: string): Promise<Response> => {
     return request<null, Response>(url, 'GET', undefined);
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const put = async <Response>(url: string): Promise<Response> => {
     return request<null, Response>(url, 'PUT', undefined);
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const post = async <Parameters, Response>(
     url: string,
     body?: Parameters

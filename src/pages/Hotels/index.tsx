@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+
 import { Hotel } from '../../api/types';
 import GenericList from '../../components/GenericList';
 import HotelDropDownPicker from '../../components/HotelDropDownPicker';

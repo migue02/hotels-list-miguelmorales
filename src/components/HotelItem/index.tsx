@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import { Pressable } from 'react-native';
+
 import { Hotel } from '../../api/types';
 import GenericList from '../GenericList';
 import HotelImage from '../HotelImage';
+import Location from '../Location';
+import Rating from '../Rating';
+import Stars from '../Stars';
 import { Text, View } from '../Themed';
 import styles from './styles';
-import Stars from '../Stars';
-import Rating from '../Rating';
-import Location from '../Location';
 
 interface IHotel {
     item: Hotel;

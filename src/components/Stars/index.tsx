@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
+import React, { FC } from 'react';
 import shortid from 'shortid';
+
 import { View } from '../Themed';
 import styles from './styles';
 
