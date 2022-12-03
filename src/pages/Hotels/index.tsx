@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from 'react';
-import DropDownPicker from 'react-native-dropdown-picker';
+import { FC, useEffect } from 'react';
 import { Hotel } from '../../api/types';
 import GenericList from '../../components/GenericList';
+import HotelDropDownPicker from '../../components/HotelDropDownPicker';
 import HotelItem from '../../components/HotelItem';
 import { Text, View } from '../../components/Themed';
 import useHotels from '../../hooks/useHotels';
@@ -11,15 +11,6 @@ import styles from './styles';
 const List: FC<HotelsProps> = (props) => {
     const { navigation } = props;
     const { hotels, search, order, loading } = useHotels();
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState<keyof Hotel | ''>('');
-    const [items, setItems] = useState([
-        { label: 'Default', value: '' },
-        { label: 'Name', value: 'name' },
-        { label: 'Stars', value: 'stars' },
-        { label: 'User rating', value: 'userRating' },
-        { label: 'Price', value: 'price' },
-    ]);
 
     useEffect(() => {
         navigation.setOptions({
@@ -31,10 +22,6 @@ const List: FC<HotelsProps> = (props) => {
         });
     }, [navigation]);
 
-    useEffect(() => {
-        order(value);
-    }, [value]);
-
     if (loading) {
         return <Text>Loading...</Text>;
     }
@@ -44,15 +31,7 @@ const List: FC<HotelsProps> = (props) => {
             <View style={styles.header}>
                 <Text>Order by</Text>
                 <View style={styles.picker}>
-                    <DropDownPicker
-                        placeholder="Default"
-                        open={open}
-                        value={value}
-                        items={items}
-                        setOpen={setOpen}
-                        setValue={setValue}
-                        setItems={setItems}
-                    />
+                    <HotelDropDownPicker onChange={order} />
                 </View>
             </View>
             <GenericList
