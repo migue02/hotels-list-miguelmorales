@@ -10,9 +10,17 @@ It returns an object with the hotels and the loading state:
     -   _hotels_ with all data: when the request is done and ok
 
 *   **loading**: _boolean_
+
     -   **True** when a the request to get the hotels is happening
     -   **False** default value. When the request to get the hotels is finished or still didn't happen
 
+*   **search**: _(text: string) => void_
+
+    -   It searchs and filter by name the hotels list using the given text
+
+*   **order**: _(field: keyof Hotel | '') => void;_
+    -   It orders by the given field the hotel list
+
 #### How to use it
 
-`const {hotels, loading} = useHotels();`
+`const {hotels, search, order, loading} = useHotels();`

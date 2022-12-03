@@ -5,6 +5,7 @@ import styles from './styles';
 interface IHoteImagel {
     item: string;
 }
+
 const NoImage = 'https://placehold.jp/120x120.jpg';
 
 const HoteImagel: FC<IHoteImagel> = ({ item }) => {

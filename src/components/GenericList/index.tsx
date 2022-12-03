@@ -19,7 +19,7 @@ const GenericList = <ItemT,>(props: GenericListProps<ItemT>) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const changeIndex = (next: boolean) => {
-        if (items?.length) {
+        if (items.length) {
             const newIndex = next
                 ? Math.min(currentIndex + 1, items.length - 1)
                 : Math.max(currentIndex - 1, 0);
@@ -42,7 +42,7 @@ const GenericList = <ItemT,>(props: GenericListProps<ItemT>) => {
                 keyExtractor={keyExtractor}
                 scrollEnabled={!(scrollButtons && items?.length)}
             />
-            {scrollButtons && items?.length ? (
+            {scrollButtons && items.length ? (
                 <>
                     {currentIndex > 0 ? (
                         <View style={styles.arrow}>
