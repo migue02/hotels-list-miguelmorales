@@ -17,6 +17,7 @@ const Stars: FC<IProps> = (props) => {
             {[...Array(totalStars)].map((_, i) => (
                 <FontAwesome
                     key={shortid.generate()}
+                    testID={`star-${i}`}
                     style={styles.star}
                     name={i < stars ? 'star' : 'star-o'}
                     size={16}

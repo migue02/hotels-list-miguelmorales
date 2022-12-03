@@ -8,7 +8,7 @@ import useHotels from '../../hooks/useHotels';
 import { HotelsProps } from '../types';
 import styles from './styles';
 
-const List: FC<HotelsProps> = (props) => {
+const Hotels: FC<HotelsProps> = (props) => {
     const { navigation } = props;
     const { hotels, search, order, loading } = useHotels();
 
@@ -43,4 +43,4 @@ const List: FC<HotelsProps> = (props) => {
     );
 };
 
-export default List;
+export default Hotels;

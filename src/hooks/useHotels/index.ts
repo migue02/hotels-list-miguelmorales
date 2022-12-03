@@ -17,7 +17,7 @@ const useHotels = function (): {
             setLoading(true);
             const hotels = await getHotels();
 
-            setInitalHotels(hotels);
+            setInitalHotels([...hotels]);
             setFilteredHotels([...hotels]);
             setLoading(false);
         };
