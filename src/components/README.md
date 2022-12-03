@@ -108,6 +108,28 @@ It renders the stars of a Hotel. It accepts two parameters:
 
     -   Max stars. If this one is defined it will render this amount of stars filling the number of stars specified in the **stars** prop, and the rest of stars as empty (outlined) stars.
 
+### [HotelDropDownPicker](https://github.com/migue02/hotels-list-miguelmorales/tree/main/src/components/HotelDropDownPicker)
+
+It renders a Dropdown with Hotel a set of `keyof Hotel`. It accepts two parameters:
+
+-   **items**: _{ label: string; value: keyof Hotel | ''; }[]_ (Optional)
+
+    -   Items to be shown in the DropDown. If not added it will render the default items:
+
+```
+    const defaultItems = [
+        { label: 'Default', value: '' },
+        { label: 'Name', value: 'name' },
+        { label: 'Stars', value: 'stars' },
+        { label: 'User rating', value: 'userRating' },
+        { label: 'Price', value: 'price' },
+    ];
+```
+
+-   **onChange**: _(value: keyof Hotel | '') => void_
+
+    -   Callcack excuted when an item is selected
+
 ### [Themed](https://github.com/migue02/hotels-list-miguelmorales/tree/main/src/components/Themed)
 
 Set of themed components. These components change their color depending on the selected of the app.
