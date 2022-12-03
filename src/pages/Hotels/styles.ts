@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    header: {
+    bottom: {
         zIndex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         alignContent: 'flex-end',
         justifyContent: 'flex-end',
-        paddingHorizontal: 16,
+        padding: 16,
     },
     picker: {
         width: '50%',
