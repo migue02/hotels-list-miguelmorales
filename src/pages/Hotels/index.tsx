@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 import { Hotel } from '../../api/types';
 import GenericList from '../../components/GenericList';
