@@ -42,6 +42,7 @@ const GenericList = <ItemT,>(props: GenericListProps<ItemT>) => {
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
                 scrollEnabled={!(scrollButtons && items?.length)}
+                contentInsetAdjustmentBehavior="automatic"
             />
             {scrollButtons && items.length ? (
                 <>

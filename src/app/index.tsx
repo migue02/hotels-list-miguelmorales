@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { View } from '../components/Themed';
 import Navigation from '../navigation';
 import styles from './styles';
 
@@ -9,10 +9,10 @@ const App = () => {
     const colorScheme = useColorScheme();
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <Navigation colorScheme={colorScheme} />
             <StatusBar style="auto" />
-        </SafeAreaView>
+        </View>
     );
 };
 

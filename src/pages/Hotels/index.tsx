@@ -29,17 +29,17 @@ const Hotels: FC<HotelsProps> = (props) => {
 
     return (
         <>
-            <View style={styles.header}>
-                <Text>Order by</Text>
-                <View style={styles.picker}>
-                    <HotelDropDownPicker onChange={order} />
-                </View>
-            </View>
             <GenericList
                 items={hotels}
                 renderDetails={HotelItem}
                 keyExtractor={(item: Hotel) => item.id}
             />
+            <View style={styles.bottom}>
+                <Text>Order by</Text>
+                <View style={styles.picker}>
+                    <HotelDropDownPicker onChange={order} />
+                </View>
+            </View>
         </>
     );
 };
