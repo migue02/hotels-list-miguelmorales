@@ -23,10 +23,11 @@ const request = async <Parameters, Response>(
     return (await response.json()) as Response;
 };
 
+// In here we could return the desired error so we can handle it properly
 const handleError = async (response: Response) => {
     if (response.status) {
         const jsonResponse = await response.json();
-        throw new Error(jsonResponse.message, { cause: response.status });
+        throw new Error(jsonResponse.message);
     }
 };
 
