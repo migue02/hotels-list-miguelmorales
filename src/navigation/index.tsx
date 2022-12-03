@@ -4,11 +4,12 @@ import {
     NavigationContainer,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Hotels from '../pages/Hotels';
-import { NavigationProps, RootStackParamList } from './types';
 import { FC } from 'react';
+
 import { View } from '../components/Themed';
+import Hotels from '../pages/Hotels';
 import styles from './styles';
+import { NavigationProps, RootStackParamList } from './types';
 
 const Navigation: FC<NavigationProps> = function ({ colorScheme }) {
     return (

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { getHotels } from '../../api';
 import { Hotel } from '../../api/types';
 
@@ -21,7 +22,7 @@ const useHotels = function (): {
             setFilteredHotels([...hotels]);
             setLoading(false);
         };
-        void fetchHotels();
+        fetchHotels();
     }, []);
 
     const search = (text: string) => {

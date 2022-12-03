@@ -1,4 +1,5 @@
 import { View as DefaultView } from 'react-native';
+
 import { useThemeProp, ViewProps } from '../utils';
 
 export function View(props: ViewProps) {

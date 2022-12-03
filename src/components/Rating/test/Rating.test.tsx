@@ -1,8 +1,9 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react-native';
+import React from 'react';
+import { Text } from 'react-native';
+
 import Rating from '..';
 import { getRatingIcon } from '../../../utils';
-import { Text } from 'react-native';
 
 describe('<Rating />', () => {
     it('Render rating with specific rating', async () => {

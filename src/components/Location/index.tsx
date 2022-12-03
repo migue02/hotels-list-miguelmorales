@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Linking from 'expo-linking';
+import React, { FC } from 'react';
+import { Platform } from 'react-native';
+
+import { Location as LocationType } from '../../api/types';
 import { Text, View } from '../Themed';
 import styles from './styles';
-import { Location as LocationType } from '../../api/types';
-import { Platform } from 'react-native';
-import * as Linking from 'expo-linking';
 
 interface IProps {
     location: LocationType;
@@ -14,8 +15,8 @@ const Location: FC<IProps> = (props) => {
     const { location } = props;
 
     const openGps = (lat: number, lng: number) => {
-        var scheme = Platform.OS === 'ios' ? 'maps:' : 'geo:';
-        var url = scheme + `${lat},${lng}`;
+        const scheme = Platform.OS === 'ios' ? 'maps:' : 'geo:';
+        const url = scheme + `${lat},${lng}`;
         Linking.openURL(url);
     };
 

@@ -1,4 +1,5 @@
 import { TouchableOpacity } from 'react-native';
+
 import { useThemeProp, TouchableOpacityProps } from '../utils';
 
 export function Button(props: TouchableOpacityProps) {
