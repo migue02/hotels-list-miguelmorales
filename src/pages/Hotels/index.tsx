@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect } from 'react';
 
 import { Hotel } from '../../api/types';
 import GenericList from '../../components/GenericList';
@@ -21,7 +21,7 @@ const Hotels: FC<HotelsProps> = (props) => {
                     search(event.nativeEvent.text),
             },
         });
-    }, [navigation]);
+    }, [navigation, search]);
 
     if (loading) {
         return <Text>Loading...</Text>;
@@ -32,7 +32,7 @@ const Hotels: FC<HotelsProps> = (props) => {
             <GenericList
                 items={hotels}
                 renderDetails={HotelItem}
-                keyExtractor={(item: Hotel) => item.id}
+                keyExtractor={(item: Hotel) => `${item.id}`}
             />
             <View style={styles.bottom}>
                 <Text>Order by</Text>
