@@ -19,7 +19,7 @@ type Contact = {
 };
 
 export type Hotel = {
-    id: string;
+    id: number;
     name: string;
     location: Location;
     stars: number;
