@@ -13,7 +13,7 @@ It renders the hotels screen of the app. This page has:
             -   Name
             -   Stars
             -   User rating
-            -   Price
+            -   Price per night
             -   Default
     -   List of hotels showing:
         -   Carousel of hotel images with buttons to navigate
@@ -24,7 +24,7 @@ It renders the hotels screen of the app. This page has:
             -   Address
             -   City
             -   Clickable icon which opens a map
-        -   Price
+        -   Price per night
 -   It uses `useHotels` custom hook to:
     -   Get the filtered hotel list (filtered by the search bar)
     -   Initial loading state

@@ -58,7 +58,6 @@ const List: FC<HotelsProps> = (props) => {
             <GenericList
                 items={hotels}
                 renderDetails={HotelItem}
-                onPressItem={(item: Hotel) => console.log({ item })}
                 keyExtractor={(item: Hotel) => item.id}
             />
         </>

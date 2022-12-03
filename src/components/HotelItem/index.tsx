@@ -11,12 +11,12 @@ import Location from '../Location';
 
 interface IHotel {
     item: Hotel;
-    onPress: (item: Hotel) => void;
+    onPress?: (item: Hotel) => void;
 }
 
 const HotelItem: FC<IHotel> = ({ item, onPress }) => {
     return (
-        <Pressable onPress={() => onPress(item)}>
+        <Pressable onPress={() => onPress?.(item)}>
             <View style={styles.container}>
                 <View style={styles.carousel}>
                     <GenericList
@@ -24,7 +24,6 @@ const HotelItem: FC<IHotel> = ({ item, onPress }) => {
                         horizontal
                         items={item.gallery}
                         renderDetails={HotelImage}
-                        onPressItem={(item: string) => console.log({ item })}
                         scrollButtons
                     />
                 </View>
