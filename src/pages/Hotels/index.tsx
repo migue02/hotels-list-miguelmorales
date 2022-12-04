@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import { ActivityIndicator } from 'react-native';
 
 import { Hotel } from '../../api/types';
 import GenericList from '../../components/GenericList';
@@ -24,7 +25,19 @@ const Hotels: FC<HotelsProps> = (props) => {
     }, [navigation, search]);
 
     if (loading) {
-        return <Text>Loading...</Text>;
+        return (
+            <View style={styles.container}>
+                <ActivityIndicator size="large" />
+            </View>
+        );
+    }
+
+    if (hotels.length === 0) {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.noHotels}>Hotel not found...</Text>
+            </View>
+        );
     }
 
     return (
